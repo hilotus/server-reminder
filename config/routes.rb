@@ -8,6 +8,7 @@ ServerReminder::Application.routes.draw do
       get '/login', :to => 'users#login'
       get '/_User', :to => 'users#find'
       post '/users', :to => 'users#setup'
+      post '/getToken', :to => 'users#getToken'
 
       # Term
       get '/Term', :to => 'terms#find'

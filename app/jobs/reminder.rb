@@ -20,6 +20,19 @@ class Reminder
 
         if time == now[1].split(":").first(2).join(":")
           # if the time is equal the date that user set ,We will sent a message
+          Rails.logger.debug("222222222222222222222222")
+
+          api_key = "5MdUpTLcx2D6zahWuaWpIlnu"
+          Rails.logger.debug("api_key")
+          secret_key = "Vj0YwnokrhAwQ33QcrBQOBddeXVAg6b1"
+          user = User.by_hash(event.user)
+          channelid = "3610174057026970767"
+
+          client = BaiduPush::Client.new(api_key, secret_key)
+          client.resource = '3610174057026970767'
+          messages = { title: 'title', description: 'desc' }
+          client.push_msg 3, messages, 'android-test', message_type: 1
+          Rails.logger.debug("33333333333333333333333")
         end
 
       end
