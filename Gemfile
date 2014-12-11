@@ -29,6 +29,8 @@ group :development, :test do
   gem 'pry-byebug'
 end
 
+gem "rspec-rails", :group => [:test, :development]
+
 # use resque
 gem 'redis'
 gem 'resque', '~> 1.25.2', :require => 'resque/server'
