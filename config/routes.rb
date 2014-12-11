@@ -1,4 +1,6 @@
 ServerReminder::Application.routes.draw do
+  mount Resque::Server, :at => '/resque'
+
   namespace :api, defaults: {format: 'json'} do
     namespace :v1 do
       # User
@@ -9,6 +11,10 @@ ServerReminder::Application.routes.draw do
 
       # Term
       get '/Term', :to => 'terms#find'
+
+      # Event
+      post '/Event', :to => 'events#create'
+      get '/Event', :to => 'events#find'
     end
   end
 end

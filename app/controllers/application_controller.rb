@@ -16,11 +16,11 @@ class ApplicationController < ActionController::Base
   protected
     # return mongoid queried results as {:results => [records]}
     def respond_with_jsons(records)
-      render json: {:results => records}.to_json
+      render json: {:results => records}
     end
 
     def respond_with_json(record)
-      render json: record.to_json
+      render json: record
     end
 
     def not_found(msg = nil)
