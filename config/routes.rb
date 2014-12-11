@@ -1,3 +1,7 @@
 ServerReminder::Application.routes.draw do
-  get '/1/users/me', :to => 'users#validate'
+  namespace :api, defaults: {format: 'json'} do
+    namespace :v1 do
+      get '/users/me', :to => 'users#validate'
+    end
+  end
 end
