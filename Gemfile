@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '3.2.13'
 
 gem 'rack-cors', :require => 'rack/cors'
@@ -8,9 +7,8 @@ gem 'rack-cors', :require => 'rack/cors'
 gem 'mongoid'
 gem 'bson_ext'
 gem 'rjb'
-gem 'httparty'
-gem 'baidu_push', :git => 'git@github.com:fahchen/baidu_push.git'
 
+gem 'baidu_push', :git => 'git@github.com:fahchen/baidu_push.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

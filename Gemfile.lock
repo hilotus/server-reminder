@@ -200,7 +200,6 @@ DEPENDENCIES
   capistrano-bundler (~> 1.1.0)
   capistrano-resque (~> 0.2.1)
   capistrano-rvm
-  httparty
   jquery-rails
   mongoid
   pry
