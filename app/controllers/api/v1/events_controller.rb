@@ -1,11 +1,9 @@
 module Api
   module V1
     class EventsController < ApplicationController
-
       def find
-        user = params[:where]
-        event = Event.by_hash(user:user)
-        respond_with_jsons event
+        events = Event.by_hash(params[:where])
+        respond_with_jsons events
       end
 
       def create

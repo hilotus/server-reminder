@@ -2,9 +2,9 @@ module Api
   module V1
     class UsersController < ApplicationController
       def validate
-        token = request.headers['X-Reminder-Session-Token']
+        user_id = request.headers['X-Reminder-Session-Token']
 
-        user = User.by_token(token)
+        user = User.by_user_id(user_id)
         return not_authenticated if user.size == 0
 
         respond_with_json user.first
@@ -20,6 +20,17 @@ module Api
       def find
         users = User.by_hash(params['where'])
         respond_with_jsons users
+      end
+
+      def getToken
+        data = JSON.parse(request.body.read)
+        user_id = request.headers['X-Reminder-Session-Token']
+
+        user = User.by_user_id(user_id).first
+        user.token = data['token']
+        user.save
+
+        respond_with_json({:success => true})
       end
 
       def setup
