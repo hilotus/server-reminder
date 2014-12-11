@@ -10,12 +10,12 @@ class ApplicationController < ActionController::Base
   end
 
   protected
-    def not_found
-      respond_with({:error => "not-found"}, :status => 404)
+    def not_found(msg = nil)
+      respond_with({:error => msg || 'not found'}, :status => 404)
     end
 
-    def not_authenticated
-      respond_with({:error => "not-authenticated"}, :status => 401)
+    def not_authenticated(msg = nil)
+      respond_with({:error => msg || 'not authenticated'}, :status => 401)
     end
 
 end
