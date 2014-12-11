@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.13'
 
+gem 'rack-cors', :require => 'rack/cors'
+
 gem 'mongoid'
 gem 'bson_ext'
 

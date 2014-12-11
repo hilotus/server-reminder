@@ -66,5 +66,18 @@ module ServerReminder
     config.assets.version = '1.0'
 
     config.generators.helper = false
+
+    config.middleware.insert_before 0, "Rack::Cors", :logger => (-> { Rails.logger }) do
+      allow do
+        origins '*'
+
+        resource '*',
+          :headers => :any,
+          :methods => [:get, :post, :delete, :put, :options, :head],
+          :credentials => true,
+          :max_age => 0
+      end
+    end
+
   end
 end
