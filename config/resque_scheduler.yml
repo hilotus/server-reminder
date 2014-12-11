@@ -1,0 +1,6 @@
+reminder_notify:
+  cron: "* * * * *"
+  class: Reminder
+  queue: reminder_notify
+  args:
+  description: sent remind message to the user
