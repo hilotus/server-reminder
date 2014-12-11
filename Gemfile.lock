@@ -141,6 +141,7 @@ GEM
       redis (~> 3.0)
       resque (~> 1.25)
       rufus-scheduler (~> 2.0)
+    rjb (1.5.1)
     rufus-scheduler (2.0.24)
       tzinfo (>= 0.3.22)
     sass (3.4.9)
@@ -198,6 +199,7 @@ DEPENDENCIES
   redis
   resque (~> 1.25.2)
   resque-scheduler (~> 3.0.0)
+  rjb
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
   unicorn
