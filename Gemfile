@@ -38,7 +38,6 @@ gem 'resque-scheduler', '~> 3.0.0'
 
 # Deploy with Capistrano
 gem 'unicorn'
-gem "capistrano-resque", "~> 0.2.1", require: false
 group :development do
   gem 'capistrano', '~> 3.2.1'
   gem 'capistrano-bundler', '~> 1.1.0'

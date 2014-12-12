@@ -7,5 +7,7 @@ class Event
   field :description, type: String
   field :datetime, type: String
 
+  # TODO: event add type field
+
   scope :by_hash, ->(hash){ where(hash) }
 end

@@ -50,8 +50,7 @@ namespace :deploy do
 
   after 'deploy:restart', 'nginx:restart'
 
-  # resque workers and scheduler
-  after "deploy:restart", "resque:restart", "resque:scheduler:restart"
+  # TODO: resque workers and scheduler
 
   after :deploy, "deploy:restart"
 
