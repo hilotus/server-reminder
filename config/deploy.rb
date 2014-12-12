@@ -48,8 +48,6 @@ namespace :deploy do
 
   after "deploy:run_tests", 'deploy:setup_config'
 
-  after 'deploy:symlink:shared', 'deploy:compile_assets_locally'
-
   after 'deploy:restart', 'nginx:restart'
 
   # resque workers and scheduler
